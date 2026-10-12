@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -18,6 +19,7 @@ PRIVATE_OUTPUT_DIRS = {
 
 REQUIRED = [
     ROOT / "README.md",
+    ROOT / "LICENSE",
     ROOT / ".gitignore",
     ROOT / "requirements.txt",
     ROOT / "config" / "sites.example.csv",
@@ -112,12 +114,37 @@ def check_text(errors: list[str]) -> None:
                 errors.append(f"{label} found in {path.relative_to(ROOT)}")
 
 
+def check_tracked_files(errors: list[str]) -> None:
+    """Ensure private data and generated outputs never enter the Git index."""
+    result = subprocess.run(
+        ["git", "ls-files", "-z"],
+        cwd=ROOT,
+        capture_output=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        errors.append("Unable to inspect the Git index for publication safety")
+        return
+
+    allowed_private_files = {
+        "data/raw/README.md",
+        "data/processed/README.md",
+        "results/README.md",
+    }
+    protected_prefixes = ("data/raw/", "data/processed/", "results/", "work/")
+    for raw_path in result.stdout.decode("utf-8").split("\0"):
+        path = raw_path.replace("\\", "/")
+        if path and path.startswith(protected_prefixes) and path not in allowed_private_files:
+            errors.append(f"Private or generated file is tracked: {path}")
+
+
 def main() -> int:
     errors: list[str] = []
     check_required(errors)
     check_notebooks(errors)
     check_scripts(errors)
     check_text(errors)
+    check_tracked_files(errors)
 
     if errors:
         print("Repository verification failed:")

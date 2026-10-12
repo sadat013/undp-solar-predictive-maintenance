@@ -1,8 +1,19 @@
 # License status
 
-No license has been selected or granted for this work.
+This repository carries an **All Rights Reserved** notice in [LICENSE](LICENSE).
+It is publicly visible for portfolio review, academic evaluation, and research
+transparency, but it is not open-source software and grants no open-source
+reuse, modification, or distribution rights.
 
-Until the project team, academic supervisors, and relevant data or project owners confirm publication rights, the contents should be treated as all rights reserved. A public open-source license should be added only after ownership of the code, permission to publish project-derived material, third-party dependencies, and attribution requirements have been reviewed.
+GitHub's Terms of Service still allow GitHub users to view and fork content in
+a public repository through GitHub's functionality. A copyright notice cannot
+make a public repository private or prevent downloads and forks.
+
+No partner telemetry, alarms, maintenance records, site identities, credentials,
+or other operational datasets are included or licensed. A permissive public
+license should be considered only after the project team, academic supervisors,
+and relevant data or project owners confirm ownership, publication rights,
+third-party dependencies, and attribution requirements.
 
 Possible licenses to discuss later include:
 
@@ -10,4 +21,5 @@ Possible licenses to discuss later include:
 - Apache-2.0 for a permissive license with an explicit patent grant; or
 - a dual structure in which code and documentation use different approved licenses.
 
-This file is a status notice, not a software license.
+This file explains the current licensing position; the operative notice is the
+root [LICENSE](LICENSE) file.

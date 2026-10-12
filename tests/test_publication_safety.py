@@ -35,7 +35,9 @@ class PublicationSafetyTests(unittest.TestCase):
         readme = (ROOT / "README.md").read_text(encoding="utf-8").lower()
         self.assertIn("work-in-progress", readme)
         self.assertIn("not yet complete", readme)
-        self.assertIn("no open-source license", readme)
+        self.assertIn("all rights reserved", readme)
+        self.assertIn("not open-source", readme)
+        self.assertIn("operational datasets are not included", readme)
 
 
 if __name__ == "__main__":

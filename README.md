@@ -127,6 +127,7 @@ The next modelling decision is still open: either train one model using paramete
 |-- tests/test_publication_safety.py
 |-- .gitignore
 |-- CONTRIBUTING.md
+|-- LICENSE
 |-- LICENSE_STATUS.md
 |-- SECURITY.md
 `-- requirements.txt
@@ -231,7 +232,12 @@ This is my Challenge-Based Module within the DENSYS master's programme, spanning
 
 ## License and citation
 
-No open-source license has been selected. Until the team and data owner approve a license, the repository should be treated as **all rights reserved**. See [LICENSE_STATUS.md](LICENSE_STATUS.md).
+This repository is **All Rights Reserved** and is not open-source software.
+Public visibility permits viewing and forking through GitHub under GitHub's
+Terms of Service, but no broader permission to reuse, modify, distribute, or
+create derivative works is granted. Partner telemetry, alarm records, site
+identities, credentials, and other operational datasets are not included or
+licensed. See [LICENSE](LICENSE) and [LICENSE_STATUS.md](LICENSE_STATUS.md).
 
 A `CITATION.cff` file has intentionally not been added because final authorship, contribution roles, release version, and publication approval are not yet confirmed.
 
