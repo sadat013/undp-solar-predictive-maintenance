@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+work/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+config/sites.csv
+*.pem
+*.key
+
+# Private and generated project data
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/README.md
+results/*
+!results/README.md
+
+# Common data exports and archives
+*.csv
+!config/sites.example.csv
+*.json
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.zip
+*.7z
+*.tar
+*.gz
+
+# Generated reports and figures
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.docx
+*.pptx
+
+# IDE and operating system
+.vscode/
+.idea/
+*.code-workspace
+.MATLABDriveTag
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+~$*
